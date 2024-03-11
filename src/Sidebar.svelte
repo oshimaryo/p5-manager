@@ -30,10 +30,11 @@
   });
 </script>
 
+<button class="toggle" on:click="{handleToggle}" class:-active={isActive}>
+  <img src="/assets/star.png" alt="star.png" />
+</button>
+
 <div class="sidebar {isActive ? '-active' : ''}">
-  <button class="toggle" on:click="{handleToggle}">
-    <img src="/assets/star.png" alt="star.png" />
-  </button>
   {#if loaded}
     <h2>{p5rc.collectionName}</h2>
     <ul>
@@ -67,13 +68,17 @@
     left: -220px;
     width: 220px;
     height: 100%;
-    padding-left: 20px;
+    padding: 0 10px 0 40px;
     background-color: #f5f5f5;
     text-align: left;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     z-index: 10;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   .sidebar.-active {
@@ -81,9 +86,9 @@
   }
 
   .toggle {
-    position: absolute;
+    position: fixed;
     top: 10px;
-    right: -40px;
+    left: 5px;
     background-color: transparent;
     border: none;
     transition: all 1s;
@@ -96,7 +101,7 @@
     width: 24px;
   }
 
-  .sidebar.-active .toggle {
+  .toggle.-active {
     -ms-transform: rotate(144deg);
     -webkit-transform: rotate(144deg);
     transform: rotate(144deg);
@@ -110,6 +115,12 @@
 
   .sidebar ul li {
     cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+
+  .sidebar ul li span {
+    word-break: break-word;
   }
 
   .sidebar ul li span.-active {
@@ -125,6 +136,7 @@
     bottom: 20px;
     font-size: 13px;
     color: #333;
+    background: #f5f5f5;
   }
 
   .highlight {
