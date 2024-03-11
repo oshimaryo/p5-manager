@@ -49,26 +49,16 @@
       {/each}
     </ul>
   {/if}
-
-  <div class="footer">
-    <a href="https://github.com/chiunhau/p5-manager" class="version">
-      p5-manager v1.4.0
-    </a>
-    <br />
-    by
-    <a href="https://twitter.com/chiunhauyou" class="author highlight"
-      >@chiunhauyou</a>
-  </div>
 </div>
 
 <style>
   .sidebar {
     position: absolute;
     top: 0;
-    left: -220px;
-    width: 220px;
+    left: -300px;
+    width: 300px;
     height: 100%;
-    padding: 0 10px 0 40px;
+    padding: 0 10px 40px 40px;
     background-color: #f5f5f5;
     text-align: left;
     transition: all 0.5s;
@@ -129,14 +119,6 @@
 
   .sidebar ul li a {
     color: #333;
-  }
-
-  .sidebar .footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 13px;
-    color: #333;
-    background: #f5f5f5;
   }
 
   .highlight {
