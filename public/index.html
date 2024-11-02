@@ -5,13 +5,23 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>p5-manager</title>
 		<style>
+			:root {
+				--cBackground: #fff;
+			}
+
+			/* OSの設定がダークモード時のスタイル */
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--cBackground: #000;
+				}
+			}
 			html,
 			body {
 				margin: 0;
 				padding: 0;
 				height: 100%;
 				width: 100%;
-				background-color: #fff;
+				background-color: var(--cBackground);
 				text-align: center;
 				overflow: hidden;
 			}

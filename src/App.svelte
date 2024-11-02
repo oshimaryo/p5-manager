@@ -16,7 +16,19 @@
 </div>
 
 <style>
+  :root {
+    --cBackground: #fff;
+  }
+
+  /* OSの設定がダークモード時のスタイル */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cBackground: #000;
+    }
+  }
   .app {
     height: 100%;
+    /* background-color: black; */
+    background-color: var(--cBackground);
   }
 </style>

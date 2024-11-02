@@ -30,7 +30,7 @@
   });
 </script>
 
-<button class="toggle" on:click="{handleToggle}" class:-active={isActive}>
+<button class="toggle" on:click="{handleToggle}" class:-active="{isActive}">
   <img src="/assets/star.png" alt="star.png" />
 </button>
 
@@ -40,11 +40,13 @@
     <ul>
       {#each p5rc.projects as project}
         <li>
-          <span on:click="{() => handleRouteChange(`/${project}`)}"
-          class="{project === $location.slice(1) ? '-active' : ''}">
-          {project}
-          <span>
-          <a href="{`/${project}/index.html`}" target="_blank">↗</a>
+          <span
+            on:click="{() => handleRouteChange(`/${project}`)}"
+            class="{project === $location.slice(1) ? '-active' : ''}">
+            {project}
+            <span>
+              <a href="{`/${project}/index.html`}" target="_blank">↗</a>
+            </span></span>
         </li>
       {/each}
     </ul>
@@ -68,7 +70,9 @@
     overflow-x: hidden;
     overflow-y: auto;
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
   }
 
   .sidebar.-active {
@@ -121,7 +125,7 @@
     color: #333;
   }
 
-  .highlight {
+  /* .highlight {
     color: #f07;
-  }
+  } */
 </style>
